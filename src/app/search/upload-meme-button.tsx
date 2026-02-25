@@ -18,8 +18,8 @@ import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 
 export function UploadMemeButton() {
-  const uploadInputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
+  const uploadInputRef = useRef<HTMLInputElement>(null);
   const [displayName, setDisplayName] = useState("");
   const [isUploading, setIsUploading] = useState(false);
   const [tags, setTags] = useState("");
@@ -70,7 +70,7 @@ export function UploadMemeButton() {
               </div>
 
               <IKUpload
-                fileName="test-upload.png"
+                fileName="memeUpload.png"
                 customMetadata={{
                   displayName,
                 }}

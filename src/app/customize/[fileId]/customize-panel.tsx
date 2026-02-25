@@ -113,6 +113,10 @@ export function CustomizePanel({
             />
           )}
 
+          <Button onClick={handleSave} disabled={isSaving}>
+            {isSaving ? "Sauvegarde..." : "Valider"}
+          </Button>
+
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
