@@ -22,11 +22,11 @@ export function CustomizePanel({
   file,
   isFavorited,
   isAuthenticated,
-}: {
+  }: {
   file: Pick<FileObject, "filePath" | "name" | "fileId">;
   isFavorited: boolean;
   isAuthenticated: boolean;
-}) {
+  }) {
 
   const router = useRouter();
   const [textTransformation, setTextTransformations] = useState<
@@ -58,45 +58,45 @@ export function CustomizePanel({
     []
   );
     const handleSave = async () => {
-  try {
-    setIsSaving(true);
+      try {
+        setIsSaving(true);
 
-    const image = document.querySelector("#meme img");
-    const src = image?.getAttribute("src");
-    if (!src) return;
+        const image = document.querySelector("#meme img");
+        const src = image?.getAttribute("src");
+        if (!src) return;
 
-    const imageResponse = await fetch(src);
-    const blob = await imageResponse.blob();
+        const imageResponse = await fetch(src);
+        const blob = await imageResponse.blob();
 
-    const formData = new FormData();
-    formData.append("file", blob);
-    formData.append("fileName", file.name);
+        const formData = new FormData();
+        formData.append("file", blob);
+        formData.append("fileName", file.name);
 
-    const res = await fetch("/api/save-meme", {
-      method: "POST",
-      body: formData,
-    });
+        const res = await fetch("/api/save-meme", {
+          method: "POST",
+          body: formData,
+        });
 
-    if (!res.ok) {
-      console.error("Save failed:", await res.text());
-      return;
-    }
+        if (!res.ok) {
+          console.error("Save failed:", await res.text());
+          return;
+        }
 
-    const data = await res.json();
+        const data = await res.json();
 
-    if (data?.fileId) {
-      router.replace("/search");
-      setTimeout(() => {
-      router.refresh();
-      }, 300);
-    }
+        if (data?.fileId) {
+          router.replace("/search");
+          setTimeout(() => {
+          router.refresh();
+        }, 300);
+        }
 
-  } catch (error) {
-    console.error("Erreur sauvegarde meme:", error);
-  } finally {
-    setIsSaving(false);
-  }
-};
+      } catch (error) {
+        console.error("Erreur sauvegarde meme:", error);
+      } finally {
+        setIsSaving(false);
+      }
+    };
 
   return (
     <>
@@ -112,10 +112,6 @@ export function CustomizePanel({
               pathToRevalidate={`/customize/${file.fileId}`}
             />
           )}
-
-          <Button onClick={handleSave} disabled={isSaving}>
-            {isSaving ? "Sauvegarde..." : "Valider"}
-          </Button>
 
           <TooltipProvider>
             <Tooltip>
@@ -142,6 +138,9 @@ export function CustomizePanel({
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
+          <Button onClick={handleSave} disabled={isSaving}>
+            {isSaving ? "Sauvegarde..." : "Valider"}
+          </Button>
         </div>
       </div>
 

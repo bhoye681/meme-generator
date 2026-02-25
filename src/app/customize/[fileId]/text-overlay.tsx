@@ -54,7 +54,7 @@ export function TextOverlay({
     <Card className="p-4 space-y-4">
       <div className="flex justify-between gap-8">
         <div className="flex-grow">
-          <Label htmlFor={`textOverlay${index}`}>Text Overlay {index}</Label>
+          <Label htmlFor={`textOverlay${index}`}>Texte sur l'image {index}</Label>
           <Input
             id={`textOverlay${index}`}
             onChange={(e) => {
@@ -76,7 +76,7 @@ export function TextOverlay({
               htmlFor="terms"
               className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
             >
-              Apply Text Background
+              Appliquer un arrière-plan au texte
             </label>
           </div>
 
@@ -93,7 +93,7 @@ export function TextOverlay({
         </div>
       </div>
       <div>
-        <Label htmlFor={`text${index}XPosition`}>Text {index} X Position</Label>
+        <Label htmlFor={`text${index}XPosition`}>Texte {index} X Position</Label>
         <Slider
           id={`text${index}XPosition`}
           value={[textOverlayXPosition]}
@@ -103,7 +103,7 @@ export function TextOverlay({
         />
       </div>
       <div>
-        <Label htmlFor={`text${index}YPosition`}>Text {index} Y Position</Label>
+        <Label htmlFor={`text${index}YPosition`}>Texte {index} Y Position</Label>
         <Slider
           id={`text${index}YPosition`}
           value={[textOverlayYPosition]}
