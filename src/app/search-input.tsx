@@ -11,7 +11,7 @@ export function SearchInput() {
       name="search"
       type="search"
       defaultValue={queryString.get("q") ?? ""}
-      placeholder="Search memes..."
+      placeholder="Rechercher mème..."
       className="pl-8 sm:w-[300px] md:w-[200px] lg:w-[300px]"
     />
   );

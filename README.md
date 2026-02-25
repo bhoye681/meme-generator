@@ -1,47 +1,36 @@
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
 ## Getting Started
 
-1. `npm i`
-2. setup env variables (see below)
-3. `npm run dev`
+First, run the development server:
 
-## Environment Variables
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-In order to run this project, you'll need to create a `.env` file based on the `.env.sample` file.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### ImageKit Setup
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-1. create an imagekit account
-2. navigate to https://imagekit.io/dashboard/developer/api-keys
-3. copy the necessary keys and put into .env
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-- NEXT_PUBLIC_PUBLIC_KEY
-- NEXT_PUBLIC_URL_ENDPOINT
-- PRIVATE_KEY
+## Learn More
 
-### Neon Setup
+To learn more about Next.js, take a look at the following resources:
 
-1. create a neon account and setup a neon database
-2. copy the connection string and paste into the .env file for DRIZZLE_DATABASE_URL
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-### Google Auth
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-By default, this starter only comes with the google provider which you'll need to setup:
+## Deploy on Vercel
 
-1. https://console.cloud.google.com/apis/credentials
-2. create a new project
-3. setup oauth consent screen
-4. create credentials - oauth client id
-5. for authorized javascript origins
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-- http://localhost:3000
-- https://your-domain.com
-
-6. Authorized redirect URIs
-
-- http://localhost:3000/api/auth/callback/google
-- https://your-domain.com/api/auth/callback/google
-
-7. Set your google id and secret inside of .env
-
-- **AUTH_GOOGLE_ID**
-- **AUTH_GOOGLE_SECRET**
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

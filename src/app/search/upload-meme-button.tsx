@@ -27,13 +27,13 @@ export function UploadMemeButton() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button>Upload Base Meme</Button>
+        <Button>Télécharger un mème</Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Upload your meme image</DialogTitle>
+          <DialogTitle>Ajouter votre image</DialogTitle>
           <DialogDescription>
-            This is a meme image anyone on the site can build upon.
+            Choisissez une image à transformer en mème
           </DialogDescription>
 
           <form
@@ -46,7 +46,7 @@ export function UploadMemeButton() {
           >
             <div>
               <div className="mb-4">
-                <Label htmlFor="displayName">Display Name</Label>
+                <Label htmlFor="displayName">Nom d'affichage</Label>
                 <Input
                   id="displayName"
                   name="displayName"
@@ -58,7 +58,7 @@ export function UploadMemeButton() {
               </div>
 
               <div>
-                <Label htmlFor="tags">Tags</Label>
+                <Label htmlFor="tags">Étiquette</Label>
                 <Input
                   id="tags"
                   name="tags"
@@ -91,13 +91,13 @@ export function UploadMemeButton() {
             <DialogFooter className="flex justify-end">
               <DialogClose asChild>
                 <Button type="button" variant="secondary">
-                  Close
+                  Fermer
                 </Button>
               </DialogClose>
 
               <Button disabled={isUploading} type="submit">
                 {isUploading && <Spinner />}
-                Select & Upload Image
+                Selectionner & Ajouter une image
               </Button>
             </DialogFooter>
           </form>

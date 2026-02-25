@@ -30,14 +30,14 @@ export async function Header() {
           href="/search?q="
           className="text-muted-foreground transition-colors hover:text-foreground"
         >
-          Browse
+          Dashboard
         </Link>
         {session && (
           <Link
             href="/favorites"
             className="text-muted-foreground hover:text-foreground"
           >
-            Favorites
+            Favoris
           </Link>
         )}
       </nav>
@@ -45,7 +45,7 @@ export async function Header() {
         <SheetTrigger asChild>
           <Button variant="outline" size="icon" className="shrink-0 md:hidden">
             <Menu className="h-5 w-5" />
-            <span className="sr-only">Toggle navigation menu</span>
+            <span className="sr-only">Navigation Menu</span>
           </Button>
         </SheetTrigger>
         <SheetContent side="left">
@@ -61,7 +61,7 @@ export async function Header() {
               href="/search?q="
               className="text-muted-foreground hover:text-foreground"
             >
-              Browse
+              Dashboard
             </Link>
 
             {session && (
@@ -69,7 +69,7 @@ export async function Header() {
                 href="/favorites"
                 className="text-muted-foreground hover:text-foreground"
               >
-                Favorites
+                Favoris
               </Link>
             )}
           </nav>
@@ -108,7 +108,7 @@ async function AccountMenu() {
           await signIn();
         }}
       >
-        <Button type="submit">Sign in</Button>
+        <Button type="submit">Se connecter</Button>
       </form>
     );
   }
@@ -118,7 +118,7 @@ async function AccountMenu() {
       <DropdownMenuTrigger asChild>
         <Button variant="secondary" size="icon" className="rounded-full">
           <CircleUser className="h-5 w-5" />
-          <span className="sr-only">Toggle user menu</span>
+          <span className="sr-only">Menu utilisateur</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
@@ -129,7 +129,7 @@ async function AccountMenu() {
               await signOut();
             }}
           >
-            <button type="submit">Sign out</button>
+            <button type="submit">Se déconnecter</button>
           </form>
         </DropdownMenuItem>
       </DropdownMenuContent>

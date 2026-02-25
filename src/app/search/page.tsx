@@ -22,7 +22,7 @@ export default async function SearchPage({
   return (
     <div className="container mx-auto space-y-8 py-8 px-4">
       <div className="flex items-center justify-between">
-        <h1 className="text-4xl font-bold">Search Results</h1>
+        <h1 className="text-4xl font-bold">Galérie</h1>
         <UploadMemeButton />
       </div>
 

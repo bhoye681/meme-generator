@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { FileObject } from "imagekit/dist/libs/interfaces";
@@ -57,7 +56,7 @@ export function CustomizePanel({
   return (
     <>
       <div className="flex justify-between items-center">
-        <h1 className="text-4xl font-bold">Customize</h1>
+        <h1 className="text-4xl font-bold">Modifier</h1>
 
         <div className="flex gap-4 justify-end">
           {isAuthenticated && (
@@ -90,7 +89,7 @@ export function CustomizePanel({
                 </Button>
               </TooltipTrigger>
               <TooltipContent>
-                <p>Download Image</p>
+                <p>Télécharger Image</p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
@@ -101,7 +100,7 @@ export function CustomizePanel({
         <div className="space-y-4">
           <div>
             <Card className="p-4 space-y-4">
-              <h2 className="text-xl">Effects</h2>
+              <h2 className="text-xl">Effets</h2>
 
               <div className="flex gap-4">
                 <div className="flex gap-2">
@@ -116,7 +115,7 @@ export function CustomizePanel({
                     htmlFor="blur"
                     className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                   >
-                    Blur
+                    Flouter
                   </label>
                 </div>
                 <div className="flex gap-2">
@@ -131,7 +130,7 @@ export function CustomizePanel({
                     htmlFor="sharpen"
                     className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                   >
-                    Sharpen
+                    Contraster
                   </label>
                 </div>
                 <div className="flex gap-2">
@@ -146,7 +145,7 @@ export function CustomizePanel({
                     htmlFor="grayscale"
                     className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                   >
-                    Grayscale
+                    Griser
                   </label>
                 </div>
               </div>
@@ -159,7 +158,7 @@ export function CustomizePanel({
 
           <div className="flex gap-4">
             <Button onClick={() => setNumberOfOverlays(numberOfOverlays + 1)}>
-              Add Another Overlay
+              Ajouter un texte
             </Button>
 
             {numberOfOverlays > 1 && (
@@ -175,7 +174,7 @@ export function CustomizePanel({
                   });
                 }}
               >
-                Remove Last
+                Supprimer
               </Button>
             )}
           </div>

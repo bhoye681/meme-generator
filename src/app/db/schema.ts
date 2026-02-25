@@ -112,3 +112,11 @@ export const favoriteCounts = pgTable(
 );
 
 export type Favorite = typeof favorites.$inferSelect;
+
+export const memes = pgTable("meme", {
+  id: text("id").primaryKey(),
+  fileId: text("fileId").notNull().unique(),
+  filePath: text("filePath").notNull(),
+  userId: text("userId").notNull(),
+  createdAt: timestamp("createdAt").defaultNow(),
+});

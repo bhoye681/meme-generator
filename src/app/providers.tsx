@@ -3,7 +3,8 @@
 import { ImageKitProvider } from "imagekitio-next";
 import { ThemeProvider } from "./theme-provider";
 
-const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY;
+
+const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY!;
 const authenticator = async () => {
   try {
     const response = await fetch("http://localhost:3000/api/auth");
@@ -24,7 +25,8 @@ const authenticator = async () => {
   }
 };
 
-export const urlEndpoint = process.env.NEXT_PUBLIC_URL_ENDPOINT;
+export const urlEndpoint = process.env.NEXT_PUBLIC_URL_ENDPOINT!
+
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (

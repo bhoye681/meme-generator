@@ -12,6 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { HeartFilledIcon } from "@radix-ui/react-icons";
+import { ShareDialog } from "./share-meme";
 
 export function ResultsList({
   files,
@@ -47,8 +48,9 @@ export function ResultsList({
           </CardContent>
           <CardFooter>
             <Button asChild>
-              <Link href={`/customize/${file.fileId}`}>Customize</Link>
+              <Link href={`/customize/${file.fileId}`}>Modifier</Link>
             </Button>
+            <ShareDialog filePath={file.filePath} />
           </CardFooter>
         </Card>
       ))}
