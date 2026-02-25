@@ -16,6 +16,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { FavoriteButton } from "./favorite-button";
+import { useRouter } from "next/navigation";
 
 export function CustomizePanel({
   file,
@@ -26,6 +27,8 @@ export function CustomizePanel({
   isFavorited: boolean;
   isAuthenticated: boolean;
 }) {
+
+  const router = useRouter();
   const [textTransformation, setTextTransformations] = useState<
     Record<string, { raw: string }>
   >({});
@@ -33,6 +36,8 @@ export function CustomizePanel({
   const [blur, setBlur] = useState(false);
   const [sharpen, setSharpen] = useState(false);
   const [grayscale, setGrayscale] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
+
 
   const textTransformationsArray = Object.values(textTransformation);
 
@@ -52,6 +57,46 @@ export function CustomizePanel({
     ),
     []
   );
+    const handleSave = async () => {
+  try {
+    setIsSaving(true);
+
+    const image = document.querySelector("#meme img");
+    const src = image?.getAttribute("src");
+    if (!src) return;
+
+    const imageResponse = await fetch(src);
+    const blob = await imageResponse.blob();
+
+    const formData = new FormData();
+    formData.append("file", blob);
+    formData.append("fileName", file.name);
+
+    const res = await fetch("/api/save-meme", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (!res.ok) {
+      console.error("Save failed:", await res.text());
+      return;
+    }
+
+    const data = await res.json();
+
+    if (data?.fileId) {
+      router.replace("/search");
+      setTimeout(() => {
+      router.refresh();
+      }, 300);
+    }
+
+  } catch (error) {
+    console.error("Erreur sauvegarde meme:", error);
+  } finally {
+    setIsSaving(false);
+  }
+};
 
   return (
     <>

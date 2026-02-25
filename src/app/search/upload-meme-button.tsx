@@ -50,7 +50,7 @@ export function UploadMemeButton() {
                 <Input
                   id="displayName"
                   name="displayName"
-                  placeholder="Display Name"
+                  placeholder="Nom d'affichage"
                   required
                   value={displayName}
                   onChange={(e) => setDisplayName(e.target.value)}
@@ -62,7 +62,7 @@ export function UploadMemeButton() {
                 <Input
                   id="tags"
                   name="tags"
-                  placeholder="A comma delimited list of tags"
+                  placeholder="Mettez une étiquette"
                   required
                   value={tags}
                   onChange={(e) => setTags(e.target.value)}
