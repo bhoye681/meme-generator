@@ -38,7 +38,7 @@ export function FavoriteButton({
           </form>
         </TooltipTrigger>
         <TooltipContent>
-          <p>{isFavorited ? "Unfavorite Meme" : "Favorite Meme"}</p>
+          <p>{isFavorited ? "Retirer des favoris" : "Ajouter aux favoris"}</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
