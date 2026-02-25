@@ -71,6 +71,10 @@ export function UploadMemeButton() {
 
               <IKUpload
                 fileName="memeUpload.png"
+                authenticator={async () => {
+                  const res = await fetch("/api/auth");
+                  return await res.json();
+                }}
                 customMetadata={{
                   displayName,
                 }}
